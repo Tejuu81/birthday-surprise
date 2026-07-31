@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Welcome Kapil ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#ff4d88,#ff99c8,#ffe6f2);
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+
+    margin:30px auto;
+
+    background:rgba(255,255,255,0.9);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    text-align:center;
+}
+
+h1{
+    font-family:'Great Vibes',cursive;
+    font-size:80px;
+    color:#ff0066;
+    margin-bottom:30px;
+}
+
+.message{
+    font-size:28px;
+    color:#444;
+    line-height:1.8;
+    margin-bottom:50px;
+}
+
+button{
+    padding:18px 45px;
+    border:none;
+    border-radius:50px;
+    background:#ff0066;
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.heart{
+    position:fixed;
+    color:#ff4d88;
+    animation:float 8s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+
+    100%{
+        transform:translateY(-100vh);
+        opacity:1;
+    }
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:50px;
+    }
+
+    .message{
+        font-size:20px;
+    }
+
+    button{
+        font-size:18px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Welcome Kapil ❤️</h1>
+
+<div class="message">
+
+❤️ Welcome to our beautiful journey ❤️
+
+<br><br>
+
+Every memory, every smile, every laugh, and every moment
+spent together is special to me.
+
+<br><br>
+
+This little surprise website is made with lots of love
+just for you.
+
+<br><br>
+
+I hope it brings a smile to your face and reminds you
+how much you mean to me.
+
+<br><br>
+
+Click the button below and let's relive our memories ❤️
+
+</div>
+
+<button onclick="window.location.href='memories.html'">
+Start Our Journey ❤️
+</button>
+
+</div>
+
+<script>
+
+for(let i=0;i<25;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.fontSize=(20+Math.random()*30)+"px";
+
+heart.style.animationDuration=(5+Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+
+}
+
+</script>
+
+<audio autoplay loop id="bgMusic">
+    <source src="music/Pehla_Pyaar.mp3" type="audio/mpeg">
+</audio>
+
+<style>
+#bgMusic{
+    display:none;
+}
+</style>
+
+<audio id="bgMusic" autoplay loop>
+    <source src="music/Pehla_Pyaar.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+music.addEventListener("loadedmetadata", () => {
+    const savedTime = localStorage.getItem("musicTime");
+    if (savedTime) {
+        music.currentTime = parseFloat(savedTime);
+    }
+});
+
+setInterval(() => {
+    localStorage.setItem("musicTime", music.currentTime);
+}, 1000);
+</script>
+</body>
+</html>

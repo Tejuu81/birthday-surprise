@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Love Story ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:#e5ddd5;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+overflow:hidden;
+
+}
+
+.chat{
+
+width:420px;
+
+height:700px;
+
+background:white;
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.header{
+
+background:#ff0066;
+
+color:white;
+
+padding:18px;
+
+font-size:24px;
+
+text-align:center;
+
+font-weight:bold;
+
+}
+
+.messages{
+
+flex:1;
+
+padding:20px;
+
+overflow-y:auto;
+
+background:url("images/chat-bg.jpg");
+background-size:cover;
+
+}
+
+.msg{
+
+padding:12px 18px;
+
+margin:12px 0;
+
+border-radius:15px;
+
+max-width:75%;
+
+display:none;
+
+animation:pop .5s;
+
+}
+
+.left{
+
+background:white;
+
+}
+
+.right{
+
+background:#dcf8c6;
+
+margin-left:auto;
+
+}
+
+@keyframes pop{
+
+from{
+
+transform:scale(.5);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+.next{
+
+padding:15px;
+
+text-align:center;
+
+background:white;
+
+}
+
+button{
+
+padding:12px 35px;
+
+border:none;
+
+background:#ff0066;
+
+color:white;
+
+border-radius:30px;
+
+cursor:pointer;
+
+font-size:18px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="chat">
+
+<div class="header">
+
+❤️ Kapil & Tejuuu ❤️
+
+</div>
+
+<div class="messages">
+
+<div class="msg left">Hi Kapil 😊</div>
+
+<div class="msg right">Hello Tejuuu ❤️</div>
+
+<div class="msg left">Today is your special day 🎂</div>
+
+<div class="msg right">Really? 😍</div>
+
+<div class="msg left">Happy Birthday My Love ❤️</div>
+
+<div class="msg right">Thank You My Princess 💕</div>
+
+<div class="msg left">I have a surprise for you 🎁</div>
+
+<div class="msg right">I can't wait 😍</div>
+
+<div class="msg left">I Love You Forever ❤️</div>
+
+<div class="msg right">I Love You More ❤️</div>
+
+</div>
+
+<div class="next">
+
+<button onclick="window.location.href='birthday.html'">
+
+Continue ❤️
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const msgs=document.querySelectorAll(".msg");
+
+let i=0;
+
+function show(){
+
+if(i<msgs.length){
+
+msgs[i].style.display="block";
+
+msgs[i].scrollIntoView({behavior:"smooth"});
+
+i++;
+
+setTimeout(show,1500);
+
+}
+
+}
+
+show();
+
+</script>
+
+
+
+
+<body>
+
+<audio id="bgMusic" autoplay loop>
+    <source src="music/Pehla_Pyaar.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Your door page content starts here -->
+
+<script>
+const music = document.getElementById("bgMusic");
+
+music.addEventListener("loadedmetadata", () => {
+    const savedTime = localStorage.getItem("musicTime");
+    if (savedTime) {
+        music.currentTime = parseFloat(savedTime);
+    }
+});
+
+setInterval(() => {
+    localStorage.setItem("musicTime", music.currentTime);
+}, 1000);
+
+
+</script>
+</body>
+
+
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Forever ❤️</title>
+
+<style>
+
+body{
+    margin:0;
+    background:black;
+    overflow:hidden;
+    color:white;
+    text-align:center;
+    font-family:Arial;
+}
+
+.container{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+h1{
+    font-size:70px;
+    color:pink;
+}
+
+p{
+    font-size:24px;
+    line-height:1.8;
+}
+
+.heart{
+    position:absolute;
+    font-size:30px;
+    animation:float 8s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-150px);
+    }
+}
+
+audio{
+    position:fixed;
+    bottom:10px;
+    left:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Kapil ❤️ </h1>
+
+<p>
+Thank you for every smile,<br>
+every memory,<br>
+every beautiful moment.<br><br>
+
+You will always be special in my heart. ❤️
+</p>
+
+<p>
+    1 Year, 12 Month, 365 Days, <br>
+    8760 Hours 525600 Minutes, 3153600 Sec,<br>
+     Every Day, Every night, Every time, <br>
+     I always Loveeee youuuu 🫶🫀💕🌎
+     </p>
+
+
+
+</div>
+
+
+<script>
+
+for(let i=0;i<60;i++){
+
+    let heart=document.createElement("div");
+
+    heart.className="heart";
+
+    heart.innerHTML="❤️";
+
+    heart.style.left=Math.random()*100+"%";
+
+    heart.style.animationDuration=
+    (4+Math.random()*6)+"s";
+
+    document.body.appendChild(heart);
+}
+
+</script>
+
+
+<body>
+
+<audio id="bgMusic" autoplay loop>
+    <source src="music/Pehla_Pyaar.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Your door page content starts here -->
+
+<script>
+const music = document.getElementById("bgMusic");
+
+music.addEventListener("loadedmetadata", () => {
+    const savedTime = localStorage.getItem("musicTime");
+    if (savedTime) {
+        music.currentTime = parseFloat(savedTime);
+    }
+});
+
+setInterval(() => {
+    localStorage.setItem("musicTime", music.currentTime);
+}, 1000);
+
+
+</script>
+</body>
+
+
+</body>
+</html>
+

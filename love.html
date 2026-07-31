@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Love Letter ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:linear-gradient(135deg,#ff4d88,#ff99c8,#ffe6f2);
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    padding:40px 0;
+}
+
+.card{
+
+    width:85%;
+    max-width:800px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 0 25px rgba(0,0,0,.3);
+
+    position:relative;
+
+    z-index:2;
+}
+
+h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:55px;
+
+    text-align:center;
+
+    color:#ff0066;
+
+    margin-bottom:20px;
+}
+
+#letter{
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:#444;
+
+    white-space:pre-wrap;
+}
+
+button{
+
+    margin-top:30px;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#ff0066;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    display:none;
+}
+
+button:hover{
+
+    transform:scale(1.05);
+}
+
+.heart{
+
+    position:fixed;
+
+    color:white;
+
+    animation:float 8s linear infinite;
+
+    pointer-events:none;
+}
+
+@keyframes float{
+
+0%{
+
+    transform:translateY(100vh);
+
+    opacity:0;
+}
+
+100%{
+
+    transform:translateY(-100vh);
+
+    opacity:1;
+}
+
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:40px;
+    }
+
+    #letter{
+        font-size:18px;
+    }
+
+    .card{
+        width:95%;
+        padding:25px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>To My Dearest Kapil ❤️</h1>
+
+<p id="letter"></p>
+
+<button id="nextBtn" onclick="nextPage()">
+Continue ❤️
+</button>
+
+</div>
+
+<script>
+
+const text=`Happy Birthday, My Love ❤️
+
+Dear Kapil,
+
+From the day you came into my life, everything became brighter.
+
+Every smile, every laugh, every little memory with you is precious to me.
+
+You are my happiness, my peace, and my favorite person.
+
+Thank you for always being there for me.
+
+I pray that this birthday brings you endless happiness, success, and beautiful moments.
+
+No matter what happens, I will always cherish every memory we create together.
+
+Happy Birthday once again, my love.
+
+Forever Yours,
+
+❤️ Tejuuu ❤️`;
+
+let i=0;
+
+function type(){
+
+    if(i<text.length){
+
+        document.getElementById("letter").innerHTML += text.charAt(i);
+
+        i++;
+
+        setTimeout(type,35);
+
+    }else{
+
+        document.getElementById("nextBtn").style.display="inline-block";
+
+    }
+
+}
+
+type();
+
+function nextPage(){
+
+    window.location.href="proposal.html";
+
+}
+
+// Floating Hearts
+
+for(let i=0;i<35;i++){
+
+    let h=document.createElement("div");
+
+    h.className="heart";
+
+    h.innerHTML="❤️";
+
+    h.style.left=Math.random()*100+"%";
+
+    h.style.fontSize=(20+Math.random()*30)+"px";
+
+    h.style.animationDuration=(5+Math.random()*6)+"s";
+
+    document.body.appendChild(h);
+
+}
+
+</script>
+
+
+
+<body>
+
+<audio id="bgMusic" autoplay loop>
+    <source src="music/Pehla_Pyaar.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+music.addEventListener("loadedmetadata", () => {
+    const savedTime = localStorage.getItem("musicTime");
+    if (savedTime) {
+        music.currentTime = parseFloat(savedTime);
+    }
+});
+
+setInterval(() => {
+    localStorage.setItem("musicTime", music.currentTime);
+}, 1000);
+</script>
+</body>
+
+
+
+
+</div>
+
+</body>
+</html>

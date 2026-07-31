@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Forever With You ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#ff4d88,#ff8fb3,#ffd6e8);
+
+overflow:hidden;
+
+}
+
+.container{
+
+text-align:center;
+
+color:white;
+
+}
+
+h1{
+
+font-family:'Great Vibes',cursive;
+
+font-size:70px;
+
+margin-bottom:20px;
+
+}
+
+p{
+
+font-size:25px;
+
+margin-bottom:40px;
+
+}
+
+button{
+
+padding:15px 40px;
+
+font-size:20px;
+
+border:none;
+
+border-radius:30px;
+
+cursor:pointer;
+
+margin:15px;
+
+transition:.3s;
+
+}
+
+#yes{
+
+background:#ff0066;
+
+color:white;
+
+}
+
+#no{
+
+background:white;
+
+color:#ff0066;
+
+position:absolute;
+
+}
+
+button:hover{
+
+transform:scale(1.1);
+
+}
+
+.heart{
+
+position:absolute;
+
+font-size:30px;
+
+animation:float 8s linear infinite;
+
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+
+100%{
+transform:translateY(-100vh);
+opacity:1;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Kapil ❤️</h1>
+
+<p>
+
+Will you stay with me forever?
+
+💍❤️
+
+</p>
+
+<button id="yes">YES ❤️</button>
+
+<button id="no">NO 😜</button>
+
+</div>
+
+<script>
+
+const no=document.getElementById("no");
+
+const yes=document.getElementById("yes");
+
+no.addEventListener("mouseover",function(){
+
+let x=Math.random()*(window.innerWidth-150);
+
+let y=Math.random()*(window.innerHeight-100);
+
+no.style.left=x+"px";
+
+no.style.top=y+"px";
+
+});
+
+yes.onclick=function(){
+
+alert("Yayyyyy ❤️ I Love You Forever Kapil ❤️");
+
+window.location.href="birthday.html";
+
+}
+
+// Hearts
+
+for(let i=0;i<40;i++){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"%";
+
+h.style.animationDuration=(5+Math.random()*6)+"s";
+
+document.body.appendChild(h);
+
+}
+
+</script>
+
+<audio id="bgMusic" autoplay loop>
+    <source src="music/Pehla_Pyaar.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+music.addEventListener("loadedmetadata", () => {
+    const savedTime = localStorage.getItem("musicTime");
+    if (savedTime) {
+        music.currentTime = parseFloat(savedTime);
+    }
+});
+
+setInterval(() => {
+    localStorage.setItem("musicTime", music.currentTime);
+}, 1000);
+</script>
+
+</body>
+</html>

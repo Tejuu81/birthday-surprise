@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday ❤️</title>
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    font-family:Arial;
+    color:white;
+    overflow:hidden;
+}
+h1{
+    font-size:70px;
+    animation:zoom 2s infinite alternate;
+}
+p{
+    font-size:25px;
+    text-align:center;
+}
+button{
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:18px;
+}
+@keyframes zoom{
+    from{transform:scale(1);}
+    to{transform:scale(1.1);}
+}
+</style>
+</head>
+<body>
+<h1>🎂 Happy Birthday Kapil 🎂</h1>
+<p>
+May every dream come true,<br>
+every smile stay forever,<br>
+and every day bring happiness ❤️ 🎂❤️Happy Birthday to My Love ❤️🎂 <br>
+Happy Birthday to the love of my life ❤️🎉Today is the most special day because it's<br>
+ the day the most wonderful person came into this world.<br>
+  🌎✨You are not just my partner-you are my best friend, my safe place, my biggest blessing, <br>
+  and the reason behind my happiest smiles. 🥹🫀 <br>
+Every moment I spend with you becomes a beautiful memory that I will cherish forever. <br>
+Thank you for loving me unconditionally, supporting me through every challenge, <br>
+and making even the ordinary days feel magical. 🫶💕<br>
+Your kindness, strength, and beautiful heart inspire me every single day.
+</p>
+
+<a href="final.html">
+<button>Next ➜</button>
+</a>
+
+
+
+<body>
+
+<audio id="bgMusic" autoplay loop>
+    <source src="music/Pehla_Pyaar.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Your door page content starts here -->
+
+<script>
+const music = document.getElementById("bgMusic");
+
+music.addEventListener("loadedmetadata", () => {
+    const savedTime = localStorage.getItem("musicTime");
+    if (savedTime) {
+        music.currentTime = parseFloat(savedTime);
+    }
+});
+
+setInterval(() => {
+    localStorage.setItem("musicTime", music.currentTime);
+}, 1000);
+
+
+</script>
+</body>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Love Surprise</title>
+</head>
+<body style="background:black;color:white;text-align:center;padding-top:100px;">
+
+<h1>❤️ Love Surprise ❤️</h1>
+
+<p>
+Every moment with you feels magical.<br>
+You are the reason behind my smile.My favourite person
+
+My favourite person, My love, My everything, My future, My safe place,<br>
+ My home, My forevere, My happiness, My heart, My soulmate, My comfort person, <br>
+ My biggest blessing, My favourite feeling, My reason to smile, My sweetest habit, 
+ My best part, My person, My peace, My dream come true, My always, My whole world, <br>
+ My sunshine, My constant, My little universe, My forever favourite, My favourite hello, 
+ My hardest goodbye, My beautiful chaos, My happy place, My heart's favourite,<br>
+  My one and only My today, tomorrow & forever, The best thing in my life, 
+  The one I choose every day, The reason behind my smile, The place where my heart belongs, <br>
+  My favourite chapter, My favourite notification 🥹😘🤗<br>
+
+My forever kind of love, The person I never want to lose, My calm in every storm,
+ My most precious person, The love of my life, My biggest comfort, My sweetest destiny,<br>
+  My favourite blessing from God, My home in a person, My forever and always,
+   My favourite human, My heart's safest place
+🌎❤️😘🤗✨<br>
+</p>
+
+<a href="love.html">
+<button>Next ➜</button>
+</a>
+
+<body>
+
+<audio id="bgMusic" autoplay loop>
+    <source src="music/Pehla_Pyaar.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+music.addEventListener("loadedmetadata", () => {
+    const savedTime = localStorage.getItem("musicTime");
+    if (savedTime) {
+        music.currentTime = parseFloat(savedTime);
+    }
+});
+
+setInterval(() => {
+    localStorage.setItem("musicTime", music.currentTime);
+}, 1000);
+</script>
+</body>
+
+</body>
+</html>
