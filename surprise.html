@@ -34,7 +34,9 @@ My forever kind of love, The person I never want to lose, My calm in every storm
 
 <body>
 
-<audio id="bgMusic" autoplay loop>
+
+
+ <audio id="bgMusic" autoplay loop>
     <source src="Pehla_Pyaar.mp3" type="audio/mpeg">
 </audio>
 
@@ -46,13 +48,15 @@ music.addEventListener("loadedmetadata", () => {
     if (savedTime) {
         music.currentTime = parseFloat(savedTime);
     }
+
+    music.play();
 });
 
 setInterval(() => {
     localStorage.setItem("musicTime", music.currentTime);
 }, 1000);
 </script>
-</body>
+
 
 </body>
 </html>
