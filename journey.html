@@ -221,14 +221,10 @@ function nextPage(){
 
 
 
-    
-<body>
 
-<audio id="bgMusic" autoplay loop>
-    <source src="Pehla_Pyaar.mp3" type="audio/mpeg">
+    <audio id="bgMusic" autoplay loop>
+    <source src="music/Pehla_Pyaar.mp3" type="audio/mpeg">
 </audio>
-
-<!-- Your door page content starts here -->
 
 <script>
 const music = document.getElementById("bgMusic");
@@ -238,21 +234,14 @@ music.addEventListener("loadedmetadata", () => {
     if (savedTime) {
         music.currentTime = parseFloat(savedTime);
     }
+
+    music.play();
 });
 
 setInterval(() => {
     localStorage.setItem("musicTime", music.currentTime);
 }, 1000);
-
-
 </script>
-</body>
-
-
-
-    
-</script>
-</body>
 
 
     
