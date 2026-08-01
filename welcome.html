@@ -161,22 +161,18 @@ heart.style.animationDuration=(5+Math.random()*5)+"s";
 document.body.appendChild(heart);
 
 }
-
 </script>
 
-<audio autoplay loop id="bgMusic">
-    <source src="music/Pehla_Pyaar.mp3" type="audio/mpeg">
-</audio>
 
-<style>
-#bgMusic{
-    display:none;
-}
-</style>
+    
+
+<body>
 
 <audio id="bgMusic" autoplay loop>
     <source src="Pehla_Pyaar.mp3" type="audio/mpeg">
 </audio>
+
+<!-- Your door page content starts here -->
 
 <script>
 const music = document.getElementById("bgMusic");
@@ -191,6 +187,14 @@ music.addEventListener("loadedmetadata", () => {
 setInterval(() => {
     localStorage.setItem("musicTime", music.currentTime);
 }, 1000);
+
+
 </script>
+</body>
+
+
+
+
+   
 </body>
 </html>
